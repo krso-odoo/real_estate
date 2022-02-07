@@ -1,0 +1,22 @@
+<odoo>
+	<data>
+		<record id="base_property" model="estate.property">
+			<field name="name">My Property</field>
+			<field name="description">Hello World</field>
+			<field name="status">new</field>
+		</record>
+
+		<record id="My_site" model="website.menu">
+            <field name="name">Property</field>
+            <field name="url">/estate</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+
+        
+	</data>
+
+
+
+</odoo>
+

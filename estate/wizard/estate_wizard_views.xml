@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="estate_property_wizard_form" model="ir.ui.view">
+            <field name="name">estate wizard form</field>
+            <field name="model">estate.buyer.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="partner1_id"/>
+                    </group>
+                    <footer>
+                        <button type="object" class="btn-primary" name="action_buyer" string="Assign buyer"></button>
+                        <button string="Cancel" class="btn-secondary" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_estate_wizard" model="ir.actions.act_window">
+            <field name="name">Assign offer</field>
+            <field name="res_model">estate.buyer.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="estate.model_estate_property_offer"/>
+            <field name="binding_view_types">list</field>
+        </record>
+
+        <record id="estate_property_wizard_offer_form" model="ir.ui.view">
+            <field name="name">estate wizard offer form</field>
+            <field name="model">estate.offer.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="price"/>
+                        <field name="partner_id"/>
+                        <field name="status"/>
+                    </group>
+                    <footer>
+                        <button type="object" class="btn-primary" name="action_offer" string="Assign offer"></button>
+                        <button string="Cancel" class="btn-secondary" special="cancel"></button>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_estate_offer_wizard" model="ir.actions.act_window">
+            <field name="name">Make offer</field>
+            <field name="res_model">estate.offer.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="estate.model_estate_property"/>
+            <field name="binding_view_types">list</field>
+        </record>
+</odoo>

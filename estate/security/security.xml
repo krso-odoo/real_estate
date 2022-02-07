@@ -1,0 +1,37 @@
+<odoo>
+
+<data noupdate = "0">
+<!-- access ...
+access_estate_property_type,access_estate_proprty_type,model_estate_property_type,base.group_user,1,1,1,1 
+
+access_estate_property,access_estate_property,model_estate_property,base.group_user,1,1,1,1
+-->
+	<!-- Category -->
+	<record model = "ir.module.category" id = "module_category_estate">
+		<field name = "name">Estate</field>
+		<field name = "description"> Handles Your Estate Property</field>
+		<field name = "sequence">10</field>
+	</record>
+
+	<record model = "ir.module.category" id = "module_category_estate2">
+		<field name = "name">Estate</field>
+		<field name = "description"> Handles your estate property</field>
+		<field name = "sequence"> 10 </field>
+		<field name = "parent_id" ref = "module_category_estate"/>
+	</record>
+
+	<!-- Access Rights -->
+	<record id = "group_estate_user" model = "res.groups">
+		<field name = "name">User</field>
+		<field name = "category_id" ref = "module_category_estate2"/>
+		<field name = "implied_ids" eval = "[(4, ref('base.group_user'))]"/>
+	</record>
+
+	<record id = "group_estate_administrator" model ="res.groups">
+		<field name = "name">Administrator</field>
+		<field name = "category_id" ref = "module_category_estate2"/>
+		<field name	= "implied_ids" eval = "[(4,ref('group_estate_user'))]"/>
+	</record>
+
+</data>
+</odoo>
