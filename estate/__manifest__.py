@@ -11,6 +11,9 @@
         'wizard/estate_wizard_views.xml',
         "data/estate_property_data.xml",
         "views/estate_templates.xml",
+        "report/estate_property_report.xml",
+        "report/estate_property_templates.xml",
+
 
         ],
 

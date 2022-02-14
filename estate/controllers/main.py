@@ -26,7 +26,13 @@ class EstateProperty(http.Controller):
 	@http.route(['/estate', '/estate/static/<string:is_static>'], auth="public", website=True)
 	def estate(self, is_static=False, **kw):
 		if is_static:
-			return request.render('estate.static', {'est2': request.env['estate.property'].sudo().search([], limit=8)
-			})
-		return request.render('estate.Myweb_site', {'est2': request.env['estate.property'].sudo().search([], limit=8)
-    		})
+			return request.render('estate.static', {'est2': request.env['estate.property'].sudo().search([], limit=8)})
+		return request.render('estate.Myweb_site', {'est2': request.env['estate.property'].sudo().search([], limit=8)})
+
+
+	@http.route(['/property/<model("estate.property"):property>'], auth="public", website=True)
+	def property(self, property=False, **kw):
+		if property :
+			return request.render('estate.property_details',{
+				'pr' :property
+				})

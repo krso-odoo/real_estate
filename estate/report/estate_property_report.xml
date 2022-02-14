@@ -1,0 +1,18 @@
+<odoo>
+
+
+
+  <record id="report_event_registration_badge" model="ir.actions.report">
+        <field name="name">Property Report</field>
+        <field name="model">estate.property</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">estate.report_property_offers</field>
+        <field name="report_file">estate.report_property_offers</field>
+      <!--   <field name="print_report_name">'Property Report - %s' % (object.name or 'Agent').replace('/','')</field>
+
+        <field name="paperformat_id" ref="esate.prpoperty.paperformat_euro_lowmargin"/>-->
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

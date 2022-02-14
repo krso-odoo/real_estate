@@ -52,4 +52,65 @@
         
     </template>
 
+
+
+    <template id="Myweb_site" name="myweb">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>Sequence</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </thead>
+                        <tbody>
+                            <t t-set="sequence" t-value="0"/>
+                            <t t-foreach="est2" t-as="et2">
+                                <t t-set="sequence" t-value="sequence + 1"/>
+
+                                <tr t-attf-style="#{sequence % 2 == 0 and 'background: #8c747f' or ''}">
+                                    <td><t t-out="sequence" /></td>
+                                    <td>
+                                        <a t-attf-href="/property/#{et2.id}">
+                                            <t t-out="et2.name" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <t t-if="et2.description" t-out="et2.description" />
+                                        <t t-else="">No Description Available</t>
+                                    </td>
+                                    <td><span t-field="et2.status"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="property_details">
+        <div t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- <div t-attf-style="padding-top: 70%;background-image:url(/web/image/estate./properties/#{properties.id}/image_1024); background-size:cover; background-position:center"/> -->
+                        <div>
+                            <div>State of the Property</div>
+                            <div t-field="pr.status"/>
+                        </div>
+                    </div>
+                    <div class="col-8 property_details">
+                        <div class="text-center font-weight-bold">
+                            <span t-field="pr.name"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
 </odoo>

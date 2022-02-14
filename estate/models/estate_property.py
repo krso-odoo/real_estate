@@ -14,6 +14,13 @@ class EstatePropertyTag(models.Model):
 
     name = fields.Char()
 
+# class EstateProduct(models.Model):
+#     _name="estate.product"
+#     _description="Estate Product"
+
+#     p_name = fields.Char()
+#     P_type = fields.Char()
+
 class EstatePropertyType(models.Model):
     _name="estate.property.type"
     _description="Estate property type"
@@ -32,6 +39,8 @@ class EstateProperty(models.Model):
     name = fields.Char(default = "Unkhown")
     description = fields.Text(default = _get_description)
     postcode = fields.Char()
+    property_name = fields.Char()
+
     date_availability = fields.Date(default = lambda self: fields.Datetime.now(), copy= False)
     expected_price = fields.Float()
     selling_price = fields.Float(copy= False)

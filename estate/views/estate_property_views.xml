@@ -26,27 +26,35 @@
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>
+                <group>
+
                     <group>
                         <!--field name="status"/>-->
+                         <!-- <h1> Hello </h1> -->
                         <field name="name" />
                         <field name="expected_price" />
                         <field name="selling_price" />
                         <field name="property_type_id"/>
                     </group>
-                    <div class="oe_title">
-                        <!--<h1><field name="name"/></h1>-->
-                        
-                        <field name="image" widget="image" class="oe_avatar"/>
-                    </div>
+                
+                    <group>
+                        <div class="oe_title">
+                                    
+                             <field name="image" widget="image" class="oe_avatar"/>
+                        </div>
+                    </group>
+                </group>
+
                     <notebook>
                         <page string= "desc">
                             <group>
                                 <group>
-                                    <field name= "description" />
+                                   
                                     <field name= "postcode" />
-                                    <field name= "pname"/>
+                                     <field name= "description" />
                                 </group>
                                 <group>
+                                    <field name= "pname"/>
                                     <field name= "date_availability" />
                                     
                                 </group>
@@ -54,10 +62,13 @@
                         </page>
                         <page string= "price">
                             <group>
+                            <group>
                                 <field name="expected_price" />
+                            </group>
+                            <group>
                                 <field name="selling_price" />
-                                
                             </group>    
+                        </group>
                         </page>
                         <page string= "Property Details">
                             <group>
@@ -81,10 +92,14 @@
                             </group>
                         </page>
                         <page string="Other Info">
+                        <group>
                             <group>
                                 <field name="buyer_id"/>
+                            </group>
+                            <group>
                                 <field name="salse_person"/>
                             </group>
+                        </group>
                         </page>
                         <page string="Offer">
                             <group>
@@ -93,6 +108,7 @@
                             </group>
                         </page>
                     </notebook>
+                
                 </sheet>
             </form>
         </field>
@@ -186,6 +202,10 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div>
+                                <div class = "o_kanban_image">
+                                     <field name="image" widget='image' class="oe_avatar"/>
+
+                                </div>
                                 <div class="o_kanban_details">
                                     <strong><field name="name"/></strong>
                                     <ul>

@@ -24,7 +24,7 @@
     <menuitem id="menu_real_estate_property_type" name="PropertyType" parent="menu_real_estate_root"/>
     <menuitem id="menu_real_estate_property_type_action" parent="menu_real_estate_property_type" action="estate_property_type_action"/>
 
-    <menuitem id="menu_real_estate_property_tag" name="PropertyTag" parent="menu_real_estate_property_type" action="estate_property_type_action"/>
+    <menuitem id="menu_real_estate_property_tag" name="PropertyTag" parent="menu_real_estate_property_type" action="estate_property_tag_action"/>
 
 
      <record id="estate_property_tag_action" model="ir.actions.act_window">
@@ -32,6 +32,8 @@
         <field name="res_model">estate.property.tag</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+
 
 
    <!--  <menuitem id="menu_real_estate_property_tag_action" parent="menu_real_estate_property_type" action="estate_property_tag_action"/>
@@ -69,5 +71,16 @@
 
     <menuitem id="menu_real_estate_myproperty_action" name="MyPrpperty" parent="menu_real_estate_root"
         action="my_property_action"/>
+
+
+
+    <!-- <record id="Estate_product_action" model="ir.actions.act_window">
+        <field name="name">product</field>
+        <field name="res_model">estate.product</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <menuitem id="menu_action" name="product" parent="menu_real_estate_myproperty_action"
+        action="Estate_product_action"/> -->
     
 </odoo>
