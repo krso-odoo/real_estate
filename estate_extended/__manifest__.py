@@ -4,7 +4,7 @@
    'version': '1.0',
    'summary': 'Real estate Advertisement App',
    'description': "",
-   'author':"Pravin nayee",
+   'author':"Krishant soni",
    'depends': ['base','estate'],
    'data' : [
        'security/ir.model.access.csv',
